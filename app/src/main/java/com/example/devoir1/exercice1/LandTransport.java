@@ -1,4 +1,21 @@
 package com.example.devoir1.exercice1;
 
-abstract class LandTransport extends Transport{
+public abstract class LandTransport extends Transport {
+    private static int count = 0;
+
+    public LandTransport() {
+        super();
+        count++;
+        System.out.printf("Parametrized constructor of LandTransport completed creation of instance %d with emptyWeight=%.2f, cruisingSpeed=%.2f%n",
+                count, getPoids_vide(), getVitesse_croisiere());
+    }
+
+    public LandTransport(double poids_vide, double vitesse_croisiere) {
+        super(poids_vide, vitesse_croisiere);
+        count++;
+        System.out.printf("Parametrized constructor of LandTransport completed creation of instance %d with emptyWeight=%.2f, cruisingSpeed=%.2f%n",
+                count, poids_vide, vitesse_croisiere);
+    }
+
+    public static int getCount() { return count; }
 }
